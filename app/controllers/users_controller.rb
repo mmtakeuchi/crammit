@@ -10,7 +10,7 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect "/flashcards"
         else
-            redirect "/signup"
+            erb :'/users/signup'
         end
     end
 
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
         @user = User.find_by_username(params[:user][:username])
         if @user && @user.authenticate(params[:user][:password])
             session[:user_id] = @user.id
-            redirect "/"
+            redirect "/flashcards"
         else
             erb :'/users/login'
         end
