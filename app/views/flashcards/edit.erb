@@ -1,0 +1,11 @@
+<form action="/flashcards/<%= @flashcard.id %>" method="post">
+    <input type="hidden" name="_method" value="patch">
+
+    <label for="term">Term:</label>
+    <input type="text" id="term" name="flashcard[term]" value="<%= @flashcard.term %>"><br>
+
+    <label for="definition">Definition:</label>
+    <input type="text" id="definition" name="flashcard[definition]" value="<%= @flashcard.definition %>"><br>
+
+    <input type="submit" value="Update flashcard">
+</form>
