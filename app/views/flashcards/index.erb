@@ -1,6 +1,13 @@
 <h1>Flashcards</h1>
 
-<% @flashcards.each do |flashcard| %>
-    <%= flashcard.term %><br>
-    <%= flashcard.definition %>
-<% end %>
+<div>
+    <% @flashcards.each do |flashcard| %>
+        <p>
+            <%= flashcard.term %><br>
+            <%= flashcard.definition %>
+        </p>
+    <% end %>
+</div>
+<br>
+
+<a href="/flashcards/new"><button>Create Flashcard</button></a>
