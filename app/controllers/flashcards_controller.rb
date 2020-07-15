@@ -14,7 +14,16 @@ class FlashcardsController < ApplicationController
         if @flashcard.save
             redirect "/flashcards"
         else
-            erb :'/flashcards/new'
+            erb :'flashcards/new'
+        end
+    end
+
+    get "/flashcards/:id" do
+        @flashcard = Flashcard.find_by_id(params[:id])
+        if @flashcard
+            erb :'flashcards/show'
+        else
+            redirect "/flashcards"
         end
     end
 end
