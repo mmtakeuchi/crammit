@@ -53,4 +53,14 @@ class FlashcardsController < ApplicationController
             redirect "/flashcards"
         end
     end
+
+    delete "/flashcards/:id" do
+        @flashcard = Flashcard.find_by_id(params[:id])
+
+        if current_user == @flashcard.user
+            @flashcard.destroy
+        end
+        
+        redirect "/flashcards"
+    end
 end

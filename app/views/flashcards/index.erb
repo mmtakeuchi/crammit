@@ -3,7 +3,7 @@
 <div>
     <% @flashcards.each do |flashcard| %>
         <p>
-            <%= flashcard.term %> <a href="/flashcards/<%= flashcard.id %>">Edit Flashcard</a><br>
+            <%= flashcard.term %> <a href="/flashcards/<%= flashcard.id %>">Edit</a><br>
             <%= flashcard.definition %>
         </p>
     <% end %>

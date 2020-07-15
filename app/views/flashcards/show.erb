@@ -6,3 +6,9 @@
 </div>
 
 <a href="/flashcards/<%= @flashcard.id %>/edit"><button>Edit Flashcard</button></a>
+<br><br>
+
+<form action="/flashcards/<%= @flashcard.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete Flashcard">
+</form>
