@@ -1,43 +1,43 @@
 class UsersController < ApplicationController
 
-    get '/signup' do
-        erb :"/users/signup"
+    get "/signup" do
+        erb :'/users/signup'
     end
 
-    post '/signup' do
+    post "/signup" do
         @user = User.new(params[:user])
         if @user.save
             session[:user_id] = @user.id
-            redirect '/'
+            redirect "/flashcards"
         else
-            redirect '/signup'
+            redirect "/signup"
         end
     end
 
-    get '/login' do
+    get "/login" do
         if logged_in?
-            redirect '/'
+            redirect "/flashcards"
         else
-            erb :"/users/login"
+            erb :'/users/login'
         end
     end
 
-    post '/login' do
+    post "/login" do
         @user = User.find_by_username(params[:user][:username])
         if @user && @user.authenticate(params[:user][:password])
             session[:user_id] = @user.id
-            redirect '/'
+            redirect "/"
         else
-            erb :"/users/login"
+            erb :'/users/login'
         end
     end
 
-    get '/logout' do
+    get "/logout" do
         if logged_in?
             session.clear
-            redirect '/'
+            redirect "/"
         else
-            redirect '/'
+            redirect "/"
         end
     end
 end
