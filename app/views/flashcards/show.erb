@@ -1,10 +1,14 @@
-<div>
-    <p>
-        <%= @flashcard.term %><br>
-        <%= @flashcard.definition %>
-    </p>
+<div class="flip-container row" onclick="this.classList.toggle('hover');">
+	<div class="flipper col s12">
+		<div class="front card-panel">
+			<%= @flashcard.term %>
+		</div>
+		<div class="back card-panel">
+			<%= @flashcard.definition %>
+		</div>
+	</div>
 </div>
-
+<br>
 <a href="/flashcards/<%= @flashcard.id %>/edit"><button>Edit Flashcard</button></a>
 <br><br>
 
