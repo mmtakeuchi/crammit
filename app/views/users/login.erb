@@ -1,9 +1,18 @@
-<form action="/login" method="post">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="user[username]"><br>
-
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="user[password]"><br>
-
-    <input type="submit" value="Login">
-</form>
+<div class="row">
+    <form action="/login" method="post" class="col s12">
+        <div class="row">
+            <div class="input-field col s12">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="user[username]" placeholder="Username"><br>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="input-field col s12">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="user[password]" placeholder="Password"><br>
+            </div>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Login</button>
+    </form>
+</div>
