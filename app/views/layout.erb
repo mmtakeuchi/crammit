@@ -25,13 +25,14 @@
     <nav class="z-depth-0 white">
       <div class="nav-wrapper">
         <a href="/"><i class="material-icons left" style="font-size: 35px; color:  #64b5f6">free_breakfast</i></a>
+        <a class="btn-small" href="/flashcards">Flashcards</a>
         <ul class="right">
           <% unless logged_in? %>
             <li><a class="nav-login black-text" href="/login">Login</a></li>
             <li><a class="signup btn black-text" href="/signup">Signup</a></li>
           <% else %>
             <li class="black-text"><%= current_user.username %></li>
-            <li><a class="btn" href="/logout">Logout</a></li>
+            <li><a class="btn red lighten-1" href="/logout">Logout</a></li>
           <% end %>
         </ul>
       </div>

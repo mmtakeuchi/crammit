@@ -8,11 +8,12 @@
 		</div>
 	</div>
 </div>
-<br>
-<a href="/flashcards/<%= @flashcard.id %>/edit"><button>Edit Flashcard</button></a>
 <br><br>
 
-<form action="/flashcards/<%= @flashcard.id %>" method="post">
+<a class="left" href="/flashcards/<%= @flashcard.id %>/edit"><button class="btn waves-effect waves-light">Edit Flashcard</button></a>
+
+
+<form class="right" action="/flashcards/<%= @flashcard.id %>" method="post">
     <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete Flashcard">
+    <button class="btn waves-effect waves-light" type="submit" name="action">Delete Flashcard</button>
 </form>
