@@ -3,16 +3,21 @@
         <div class="row">
             <div class="input-field col s12">
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="user[username]" placeholder="Username"><br>
+                <input type="text" id="username" name="user[username]" placeholder="Username">
             </div>
         </div>
-        <br>
+        
         <div class="row">
             <div class="input-field col s12">
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="user[password]" placeholder="Password"><br>
+                <input type="password" id="password" name="user[password]" placeholder="Password">
             </div>
         </div>
-        <button class="btn waves-effect waves-light" type="submit" name="action">Login</button>
+
+        <% if flash.has?(:message) %>
+            <p style="color: red"><%= flash[:message] %></p>
+        <% end %>
+
+        <button class="btn waves-effect waves-light left" type="submit" name="action">Login</button>
     </form>
 </div>
