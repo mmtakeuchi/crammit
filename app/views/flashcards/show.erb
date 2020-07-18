@@ -1,14 +1,15 @@
 <div class="flip-container row" onclick="this.classList.toggle('hover');">
 	<div class="flipper col s12">
-		<div class="front card-panel">
-			<%= @flashcard.term %>
+		<div class="front card-panel hoverable">
+			<h1 class="flow-text black-text center-align"><%= @flashcard.term %></h1>
 		</div>
-		<div class="back card-panel">
-			<%= @flashcard.definition %>
+		<div class="back card-panel hoverable">
+			<h3 class="flow-text black-text center-align"><%= @flashcard.definition %></h3>
 		</div>
 	</div>
 </div>
-<br><br>
+<p class="center-align">Click card to reveal defintion</p>
+<br>
 
 <a class="left" href="/flashcards/<%= @flashcard.id %>/edit"><button class="btn waves-effect waves-light">Edit Flashcard</button></a>
 

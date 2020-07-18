@@ -1,8 +1,13 @@
 class FlashcardsController < ApplicationController
+    use Rack::Flash
 
     get "/flashcards" do
-        @flashcards = current_user.flashcards
-        erb :"flashcards/index"
+        if logged_in?
+            @flashcards = current_user.flashcards
+            erb :"flashcards/index"
+        else
+            redirect '/'
+        end
     end
 
     get "/flashcards/new" do
