@@ -24,11 +24,15 @@ class FlashcardsController < ApplicationController
     end
 
     get "/flashcards/:id/edit" do
-        @flashcard = Flashcard.find_by_id(params[:id])
-        if current_user = @flashcard.user
-            erb :'flashcards/edit'
+        if logged_in?
+            @flashcard = Flashcard.find_by_id(params[:id])
+            if current_user = @flashcard.user
+                erb :'flashcards/edit'
+            else
+                redirect "/flashcards"
+            end
         else
-            redirect "/flashcards"
+            redirect "/"
         end
     end
 
