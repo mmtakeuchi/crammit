@@ -11,7 +11,7 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect "/flashcards"
         else
-            flash[:message] = "Username has already been taken. Please enter new username."
+            flash.now[:notice] = "Username has already been taken. Please enter new username."
             erb :'users/signup'
         end
     end
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect "/flashcards"
         else
-            flash[:message] = "Username or password not recoginzed. Please enter new username and password."
+            flash.now[:notice] = "Username or password not recoginzed. Please enter new username and password."
             erb :'users/login'
         end
     end

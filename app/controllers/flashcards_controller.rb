@@ -24,8 +24,8 @@ class FlashcardsController < ApplicationController
     end
 
     get "/flashcards/:id/edit" do
-        if logged_in?
-            @flashcard = Flashcard.find_by_id(params[:id])
+        @flashcard = Flashcard.find_by_id(params[:id])
+        if logged_in? && current_user == @flashcard.user
             if current_user = @flashcard.user
                 erb :'flashcards/edit'
             else
@@ -38,10 +38,14 @@ class FlashcardsController < ApplicationController
 
     get "/flashcards/:id" do
         @flashcard = Flashcard.find_by_id(params[:id])
-        if @flashcard
-            erb :'flashcards/show'
+        if logged_in? && current_user == @flashcard.user 
+            if @flashcard
+                erb :'flashcards/show'
+            else
+                redirect "/flashcards"
+            end
         else
-            redirect "/flashcards"
+            redirect "/"
         end
     end
 

@@ -14,8 +14,8 @@
             </div>
         </div>
 
-        <% if flash.has?(:message) %>
-            <p style="color: red"><%= flash[:message] %></p>
+        <% if flash.has?(:notice) %>
+            <p style="color: red"><%= flash[:notice] %></p>
         <% end %>
 
         <button class="btn waves-effect waves-light left" type="submit" name="action">Login</button>
