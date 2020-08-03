@@ -1,13 +1,17 @@
 <div class="container">
 
   <div class="col-md-8 col-md-offset-2">
-    <h1>Welcome to Crammit</h1>
+    <h1>Crammit</h1>
 
     <h3>Start creating your own flashcards today</h3>
 
     <div class="content">
       <p>
-        <a href="/signup" class="btn">Get Started</a>
+        <% if logged_in? %>
+          <a href="/flashcards" class="btn">View Flashcards</a>
+        <% else %>
+          <a href="/signup" class="btn">Get Started</a>
+        <% end %>
       </p>
     </div>
 
